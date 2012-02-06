@@ -32,6 +32,7 @@ provides: moostrapScrollspy
         Implements: [Options,Events],
 
         options: {
+            mask: "a",
             wrapper: window,
             navElementParse: function(el) {
                 // can override that to grab els based on another criteria
@@ -47,7 +48,7 @@ provides: moostrapScrollspy
             element = this.element = document.id(element);
             this.wrapper = this.options.wrapper;
 
-            var links = this.links = element.getElements('a');
+            var links = this.links = element.getElements(this.options.mask);
             var elements = this.elements = [];
             var prop = this.options.navElementParse;
 
