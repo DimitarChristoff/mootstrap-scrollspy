@@ -1,3 +1,26 @@
+/*
+---
+
+name: mootsrapScrollspy
+
+description: port of twitter scroll spy to mootools
+
+authors: Arian, Dimitar Christoff
+
+license: MIT-style license.
+
+version: 1
+
+requires:
+  - Core/Event
+  - Core/Element
+  - Core/Array
+  - Core/Class
+
+provides: mootsrapScrollspy
+
+...
+*/
 (function() {
 
     var moostrapScrollspy = this.mootsrapScrollspy = new Class({
@@ -28,8 +51,8 @@
         },
 
         scroll: function(){
-            var top = this.wrapper.getScroll().y;
-            var last, index;
+            var top = this.wrapper.getScroll().y,
+                index;
             this.elements.some(function(el, i){
                 if (!el) return false; // skip empty entry
                 var y = el.getPosition(this.wrapper == window ? document.body : this.wrapper).y;
