@@ -54,8 +54,10 @@ provides: mootsrapScrollspy
 
             Array.each(links, function(el){
                 var target = document.id(read.apply(this, [prop, el]));
-                if (target)
+                if (target) {
                     elements.push(target);
+                    el.store("navMonitor", target);
+                }
             });
 
             this.attach();
