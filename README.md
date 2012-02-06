@@ -17,6 +17,7 @@ Read the source code.
     new moostrapScrollspy("navmenu");
 
     new moostrapScrollspy('navbar3', {
+        mask: "a",  // on links only.
         navElementParse: function(el) {
             // match any div that contains a h2 with matching text
             var text = el.get("text").clean();
@@ -24,8 +25,14 @@ Read the source code.
             return target;
         },
         onActive: function(el) {
-            // do something to element that has come into view
-            el.retrieve("navMonitor").fade(0, 1);
+            // add a custom class to parent Element of link
+            el.getParent().addClass("funky");
+            // do something to element that comes into view...
+            el.retrieve("navMonitor").tween("backgroundColor", ["#cccccc", "#ffffff"]);
+        },
+        onInactive: function(el) {
+            // undo custom class
+            el.getParent().removeClass("funky");
         }
     });
 

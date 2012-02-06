@@ -33,6 +33,7 @@ provides: moostrapScrollspy
 
         options: {
             mask: "a",
+            activeClass: "active",
             wrapper: window,
             navElementParse: function(el) {
                 // can override that to grab els based on another criteria
@@ -85,12 +86,12 @@ provides: moostrapScrollspy
 
             if (index != this.active){
                 if (this.active != null) {
-                    this.links[this.active].removeClass('active');
+                    this.links[this.active].removeClass(this.options.activeClass);
                     this.fireEvent("inactive", this.links[this.active]);
                 }
                 this.active = index;
                 if (index != null) {
-                    this.links[index].addClass('active');
+                    this.links[index].addClass(this.options.activeClass);
                     this.fireEvent("active", this.links[index]);
                 }
             }
