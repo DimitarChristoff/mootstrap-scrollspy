@@ -1,7 +1,6 @@
 name: moostrapScrollspy
-description: port of twitter bootstrap-scrollspy into mootools
+current: 1.0
 author: D_mitar
 category: Interface
-tags: [bootstrap,twitter,scrollspy]
+tags: [bootstrap]
 demo: http://jsfiddle.net/dimitar/mc9yc/
-current: 1.0
