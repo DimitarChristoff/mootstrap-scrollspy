@@ -16,6 +16,10 @@ Read the source code.
             var text = el.get("text").clean();
             var target = document.getElement("h2:contains('" + text + "') ! div");
             return target;
+        },
+        onActive: function(el) {
+            // do something to element that has come into view
+            el.retrieve("navMonitor").fade(0, 1);
         }
     });
 
