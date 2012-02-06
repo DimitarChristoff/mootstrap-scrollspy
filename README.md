@@ -24,4 +24,4 @@ Read the source code.
 Demo
 ----
 
-(http://jsfiddle.net/dimitar/mc9yc/)[http://jsfiddle.net/dimitar/mc9yc/]
+[http://jsfiddle.net/dimitar/mc9yc/](http://jsfiddle.net/dimitar/mc9yc/)
