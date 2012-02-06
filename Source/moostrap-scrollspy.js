@@ -76,13 +76,13 @@ provides: moostrapScrollspy
 
         scroll: function(){
             var top = this.wrapper.getScroll().y,
-                index;
-            this.elements.some(function(el, i){
-                if (!el) return false; // skip empty entry
-                var y = el.getPosition(this.wrapper == window ? document.body : this.wrapper).y;
+                index, relativeTo = this.wrapper == window ? document.body : this.wrapper;
+
+            Array.some(this.elements, function(el, i){
+                var y = el.getPosition(relativeTo).y;
                 if (y < top) index = i;
                 return y >= top;
-            }, this);
+            });
 
             if (index != this.active){
                 if (this.active != null) {
