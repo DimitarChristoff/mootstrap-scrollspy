@@ -24,7 +24,7 @@ provides: mootsrapScrollspy
 (function() {
 
     var read = function(option, element){
-        return (option) ? (typeOf(option) == 'function' ? option(element) : element.get(option)) : '';
+        return (option) ? (typeOf(option) == 'function' ? option.call(this, element) : element.get(option)) : '';
     };
 
     var moostrapScrollspy = this.moostrapScrollspy = new Class({
@@ -34,12 +34,11 @@ provides: mootsrapScrollspy
         options: {
             wrapper: window,
             navElementParse: function(el) {
-                // can override that to grab els on another criteria
+                // can override that to grab els based on another criteria
                 var prop = el.get("href"), target;
-                if (prop.slice(0, 1) == '#') target = document.id(prop.slice(1));
+                if (prop.slice(0, 1) == '#') target = prop.slice(1);
                 return target;
-            },
-            targetPropertyParse: "id"
+            }
         },
 
         initialize: function(element, options){
@@ -54,7 +53,7 @@ provides: mootsrapScrollspy
 
 
             Array.each(links, function(el){
-                var target = read(prop, el);
+                var target = document.id(read.apply(this, [prop, el]));
                 if (target)
                     elements.push(target);
             });
