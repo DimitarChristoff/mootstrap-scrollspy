@@ -1,7 +1,7 @@
 /*
 ---
 
-name: mootsrapScrollspy
+name: moostrapScrollspy
 
 description: port of twitter scroll spy to mootools
 
@@ -17,7 +17,7 @@ requires:
   - Core/Array
   - Core/Class
 
-provides: mootsrapScrollspy
+provides: moostrapScrollspy
 
 ...
 */
