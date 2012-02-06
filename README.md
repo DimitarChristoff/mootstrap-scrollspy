@@ -1,11 +1,15 @@
 Twitter ScrollSpy port to Mootools
 ==================================
 
+![Screenshot](https://github.com/DimitarChristoff/mootstrap-scrollspy/raw/master/scrollSpy.png)
+
 This is a port of the Twitter Scrollspy to MooTools, originaly written by Arian Stolwijk.
 It extends it further and makes it more flexible, allowing you to set the dependencies
 between trigger element and target element in whichever way you like, as well as provide
 an Event API that can help with scripting of effects on the trigger or on the target
 element.
+
+
 
 How to use
 ----------
