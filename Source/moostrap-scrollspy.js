@@ -5,7 +5,7 @@ name: mootsrapScrollspy
 
 description: port of twitter scroll spy to mootools
 
-authors: Arian, Dimitar Christoff
+authors: Arian Stolwijk, Dimitar Christoff
 
 license: MIT-style license.
 
@@ -23,19 +23,40 @@ provides: mootsrapScrollspy
 */
 (function() {
 
-    var moostrapScrollspy = this.mootsrapScrollspy = new Class({
+    var read = function(option, element){
+        return (option) ? (typeOf(option) == 'function' ? option(element) : element.get(option)) : '';
+    };
 
-        initialize: function(element, wrapper){
+    var moostrapScrollspy = this.moostrapScrollspy = new Class({
+
+        Implements: [Options,Events],
+
+        options: {
+            wrapper: window,
+            navElementParse: function(el) {
+                // can override that to grab els on another criteria
+                var prop = el.get("href"), target;
+                if (prop.slice(0, 1) == '#') target = document.id(prop.slice(1));
+                return target;
+            },
+            targetPropertyParse: "id"
+        },
+
+        initialize: function(element, options){
+            this.setOptions(options);
+
             element = this.element = document.id(element);
-            this.wrapper = wrapper || window;
+            this.wrapper = this.options.wrapper;
 
             var links = this.links = element.getElements('a');
             var elements = this.elements = [];
+            var prop = this.options.navElementParse;
 
-            links.each(function(el){
-                var href = el.get('href'), target;
-                if (href.slice(0, 1) == '#') target = document.id(el.get('href').slice(1));
-                elements.push(target);
+
+            Array.each(links, function(el){
+                var target = read(prop, el);
+                if (target)
+                    elements.push(target);
             });
 
             this.attach();
@@ -61,9 +82,15 @@ provides: mootsrapScrollspy
             }, this);
 
             if (index != this.active){
-                if (this.active != null) this.links[this.active].removeClass('active');
+                if (this.active != null) {
+                    this.links[this.active].removeClass('active');
+                    this.fireEvent("inactive", this.links[this.active]);
+                }
                 this.active = index;
-                if (index != null) this.links[index].addClass('active');
+                if (index != null) {
+                    this.links[index].addClass('active');
+                    this.fireEvent("active", this.links[index]);
+                }
             }
 
         }
