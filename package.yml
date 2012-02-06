@@ -2,4 +2,5 @@ name: moostrapScrollspy
 author: D_mitar
 category: Interface
 current: 1
-tags: [bootstrap]
+tags: [bootstrap, twitter, scrollspy]
+demo: http://jsfiddle.net/dimitar/mc9yc/
