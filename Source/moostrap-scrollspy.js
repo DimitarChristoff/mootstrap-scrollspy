@@ -9,7 +9,7 @@ authors: Arian Stolwijk, Dimitar Christoff
 
 license: MIT-style license.
 
-version: 1
+version: 1.01
 
 requires:
   - Core/Event
@@ -62,13 +62,13 @@ provides: moostrapScrollspy
                     el.store("navMonitor", target);
                 }
             });
-
             this.attach();
         },
 
         attach: function(){
             if (!this.boundScroll) this.boundScroll = this.scroll.bind(this);
             this.wrapper.addEvent('scroll', this.boundScroll);
+            this.fireEvent("ready");
         },
 
         detach: function(){
@@ -76,7 +76,7 @@ provides: moostrapScrollspy
         },
 
         scroll: function(){
-            var top = this.wrapper.getScroll().y + this.options.offset,
+            var top = this.wrapper.getScroll().y - this.options.offset,
                 index, relativeTo = this.wrapper == window ? document.body : this.wrapper;
 
             Array.some(this.elements, function(el, i){
