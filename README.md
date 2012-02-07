@@ -9,7 +9,9 @@ between trigger element and target element in whichever way you like, as well as
 an Event API that can help with scripting of effects on the trigger or on the target
 element.
 
-
+You can also check this [demo](http://jsfiddle.net/dimitar/Q5WHx/show/), running on the actual
+bootstrap fluid responsive markup - make sure you downside your browser but not too much so the
+menu does not collapse.
 
 How to use
 ----------
