@@ -32,6 +32,7 @@ provides: moostrapScrollspy
         Implements: [Options,Events],
 
         options: {
+            offset: 0,
             mask: "a",
             activeClass: "active",
             wrapper: window,
@@ -75,7 +76,7 @@ provides: moostrapScrollspy
         },
 
         scroll: function(){
-            var top = this.wrapper.getScroll().y,
+            var top = this.wrapper.getScroll().y + this.options.offset,
                 index, relativeTo = this.wrapper == window ? document.body : this.wrapper;
 
             Array.some(this.elements, function(el, i){
