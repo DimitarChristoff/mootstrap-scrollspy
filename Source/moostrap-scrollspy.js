@@ -47,10 +47,13 @@ provides: moostrapScrollspy
         initialize: function(element, options){
             this.setOptions(options);
 
-            element = this.element = document.id(element);
+            this.element = document.id(element);
             this.wrapper = this.options.wrapper;
-
-            var links = this.links = element.getElements(this.options.mask);
+            this.grabElements();
+            this.attach();
+        },
+        grabElements: function() {
+            var links = this.links = this.element.getElements(this.options.mask);
             var elements = this.elements = [];
             var prop = this.options.navElementParse;
 
@@ -62,7 +65,6 @@ provides: moostrapScrollspy
                     el.store("navMonitor", target);
                 }
             });
-            this.attach();
         },
 
         attach: function(){
@@ -97,10 +99,18 @@ provides: moostrapScrollspy
                 }
             }
 
+        },
+        
+        reset: function() {
+            var self = this;
+            Array.each(this.links, function(link) {
+                link.removeClass(self.options.activeClass);
+            });
+            this.active = null;
+            this.scroll.delay(100, this);
+            this.fireEvent("reset");
         }
 
     });
-
-
 
 })();
