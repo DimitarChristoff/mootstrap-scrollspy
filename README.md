@@ -14,29 +14,34 @@ element.
 How to use
 ----------
 
-Read the source code.
+Read the source code for a full idea, it's self explanatory. Default use case works with
+no options at all.
 
 ```javascript
 
-    new moostrapScrollspy("navmenu");
+    // defaults. use href with #targetid and matching element id="targetid"
+    new moostrapScrollspy('navmenu', {
+        offset: 30  // makeup for the fixed nav bar at top
+    });
 
+    // define a custom element getter
     new moostrapScrollspy('navbar3', {
-        mask: "a",  // on links only.
+        mask: 'a.main',  // on child links with class main only.
         navElementParse: function(el) {
             // match any div that contains a h2 with matching text
-            var text = el.get("text").clean();
+            var text = el.get('text').clean();
             var target = document.getElement("h2:contains('" + text + "') ! div");
             return target;
         },
         onActive: function(el) {
             // add a custom class to parent Element of link
-            el.getParent().addClass("funky");
+            el.getParent().addClass('funky');
             // do something to element that comes into view...
-            el.retrieve("navMonitor").tween("backgroundColor", ["#cccccc", "#ffffff"]);
+            el.retrieve('navMonitor').tween('backgroundColor', ['#cccccc', '#ffffff']);
         },
         onInactive: function(el) {
             // undo custom class
-            el.getParent().removeClass("funky");
+            el.getParent().removeClass('funky');
         }
     });
 
