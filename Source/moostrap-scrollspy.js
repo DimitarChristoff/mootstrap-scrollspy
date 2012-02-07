@@ -9,7 +9,7 @@ authors: Arian Stolwijk, Dimitar Christoff
 
 license: MIT-style license.
 
-version: 1.01
+version: 1.02
 
 requires:
   - Core/Event
