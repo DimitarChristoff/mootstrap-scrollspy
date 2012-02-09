@@ -83,8 +83,8 @@ provides: moostrapScrollspy
 
             Array.some(this.elements, function(el, i){
                 var y = el.getPosition(relativeTo).y;
-                if (y < top) index = i;
-                return y >= top;
+                if (y <= top) index = i;
+                return y > top;
             });
 
             if (index != this.active){
