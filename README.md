@@ -13,6 +13,9 @@ You can also check this [demo](http://jsfiddle.net/dimitar/Q5WHx/show/), running
 bootstrap fluid responsive markup - make sure you downside your browser but not too much so the
 menu does not collapse.
 
+Practical demo: including inside the single page doc page Backbone Patterns:
+[modified with scollspy](http://fragged.org/backbone-patterns/) vs [original](http://ricostacruz.com/backbone-patterns/)
+
 How to use
 ----------
 
@@ -47,6 +50,17 @@ no options at all.
         }
     });
 
+    // code from backbone patterns example, adjusted for their dom
+    new moostrapScrollspy("toc", {
+        onActive: function(el) {
+            var parent = el.getParent("nav") || el.getParent("h2");
+            parent.addClass("active");
+        },
+        onInactive: function(el) {
+            var parent = el.getParent("nav") || el.getParent("h2");
+            parent.removeClass("active");
+        }
+    });
 ```
 
 Demo
