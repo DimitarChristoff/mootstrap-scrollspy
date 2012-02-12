@@ -10,7 +10,7 @@ an Event API that can help with scripting of effects on the trigger or on the ta
 element.
 
 You can also check this [demo](http://jsfiddle.net/dimitar/Q5WHx/show/), running on the actual
-bootstrap fluid responsive markup - make sure you downside your browser but not too much so the
+bootstrap fluid responsive markup - make sure you downsize your browser but not too much so the
 menu does not collapse.
 
 Practical demo: including inside the single page doc page Backbone Patterns:
