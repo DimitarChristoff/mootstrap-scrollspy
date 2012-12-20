@@ -1,26 +1,26 @@
 /*
- ---
+---
 
- name: moostrapScrollspy
+name: moostrapScrollspy
 
- description: port of twitter scroll spy to mootools
+description: port of twitter scroll spy to mootools
 
- authors: Arian Stolwijk, Dimitar Christoff
+authors: Arian Stolwijk, Dimitar Christoff
 
- license: MIT-style license.
+license: MIT-style license.
 
- version: 1.03
+version: 1.03
 
- requires:
- - Core/Event
- - Core/Element
- - Core/Array
- - Core/Class
+requires:
+- Core/Event
+- Core/Element
+- Core/Array
+- Core/Class
 
- provides: moostrapScrollspy
+provides: moostrapScrollspy
 
- ...
- */
+...
+*/
 /*jshint evil:true, mootools:true */
 /*global define */
 ;(function(exports){
