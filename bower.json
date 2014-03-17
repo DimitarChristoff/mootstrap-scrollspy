@@ -1,0 +1,11 @@
+{
+  "name": "mootstrap-scrollspy",
+  "version": "1.0.4",
+  "main": ["Source/mootstrap-scrollspy.js"],
+  "ignore": [
+    "README.md",
+    "bower.json",
+    "package.json",
+    "package.yml"
+  ]
+}

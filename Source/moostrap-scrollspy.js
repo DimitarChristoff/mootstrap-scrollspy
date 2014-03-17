@@ -9,7 +9,7 @@ authors: Arian Stolwijk, Dimitar Christoff
 
 license: MIT-style license.
 
-version: 1.03
+version: 1.0.4
 
 requires:
 - Core/Event
@@ -21,8 +21,6 @@ provides: moostrapScrollspy
 
 ...
 */
-/*jshint evil:true, mootools:true */
-/*global define */
 ;(function(exports){
 
 	'use strict';

@@ -1,0 +1,19 @@
+{
+  "name": "moostrap-scrollspy",
+  "version": "1.0.4",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DimitarChristoff/mootstrap-scrollspy"
+  },
+  "main": "Source/mootstrap-scrollspy.js",
+  "author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
+  "keywords": [
+    "password",
+    "strength"
+  ],
+  "license": "MIT (http://mootools.net/license.txt)",
+  "scripts": {
+    "test": "grunt"
+  }
+}
