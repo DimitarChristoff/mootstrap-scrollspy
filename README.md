@@ -3,7 +3,7 @@ Twitter ScrollSpy port to Mootools
 
 ![Screenshot](https://github.com/DimitarChristoff/mootstrap-scrollspy/raw/master/scrollSpy.png)
 
-This is a port of the Twitter Scrollspy to MooTools, originaly written by Arian Stolwijk.
+This is a port of the Twitter Scrollspy to MooTools, released with help from Arian Stolwijk.
 It extends it further and makes it more flexible, allowing you to set the dependencies
 between trigger element and target element in whichever way you like, as well as provide
 an Event API that can help with scripting of effects on the trigger or on the target
@@ -13,8 +13,10 @@ You can also check this [demo](http://jsfiddle.net/dimitar/Q5WHx/show/), running
 bootstrap fluid responsive markup - make sure you downsize your browser but not too much so the
 menu does not collapse.
 
-Practical demo: including inside the single page doc page Backbone Patterns:
-[modified with scollspy](http://fragged.org/backbone-patterns/) vs [original](http://ricostacruz.com/backbone-patterns/)
+Practical demo: Generated documentation navigation via [doctor-md](https://github.com/DimitarChristoff/doctor)
+can be seen here:
+
+[http://dimitarchristoff.github.io/epik/](http://dimitarchristoff.github.io/epik/)
 
 How to use
 ----------

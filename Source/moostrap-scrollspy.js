@@ -21,8 +21,7 @@ provides: moostrapScrollspy
 
 ...
 */
-;(function(exports){
-
+(function(){
 	'use strict';
 
 	var read = function(option, element){
@@ -30,7 +29,7 @@ provides: moostrapScrollspy
 		return (option) ? (typeof option === 'function' ? option.call(this, element) : element.get(option)) : '';
 	};
 
-	var wrap = function() {
+	var wrap = function(){
 		// work as an AMD module or as global
 
 		return new Class({
@@ -39,11 +38,11 @@ provides: moostrapScrollspy
 
 			options: {
 				/* supported events:
-				 onReady: function(){},
-				 onActive: function(navEl, TargetEl){},
-				 onInactive: function(navEl, TargetEl){},
-				 onReset: function(){},
-				 */
+				onReady: function(){},
+				onActive: function(navEl, TargetEl){},
+				onInactive: function(navEl, TargetEl){},
+				onReset: function(){},
+				*/
 				offset: 0, // adjust the top offset before an item is deemed 'in view'
 				mask: 'a',
 				activeClass: 'active',
@@ -69,6 +68,7 @@ provides: moostrapScrollspy
 
 				return this;
 			},
+
 			grabElements: function(){
 				var links = this.links = this.element.getElements(this.options.mask);
 				var elements = this.elements = [];
@@ -76,7 +76,7 @@ provides: moostrapScrollspy
 
 				Array.each(links, function(el){
 					var target = document.id(read.apply(this, [prop, el]));
-					if (target) {
+					if (target){
 						elements.push(target);
 						el.store('navMonitor', target);
 					}
@@ -110,13 +110,13 @@ provides: moostrapScrollspy
 					return y > top;
 				});
 
-				if (index != this.active) {
-					if (this.active != null) {
+				if (index != this.active){
+					if (this.active != null){
 						this.links[this.active].removeClass(this.options.activeClass);
 						this.fireEvent('inactive', [this.links[this.active], this.elements[this.active]]);
 					}
 					this.active = index;
-					if (index != null) {
+					if (index != null){
 						this.links[index].addClass(this.options.activeClass);
 						this.fireEvent('active', [this.links[index], this.elements[index]]);
 					}
@@ -142,12 +142,13 @@ provides: moostrapScrollspy
 		});
 	};
 
-	if (typeof define === 'function' && define.amd) {
-		// returns an empty module
+	if (typeof define === 'function' && define.amd){
+		// declare an amd module
 		define(wrap);
 	}
 	else {
-		exports.moostrapScrollspy = wrap();
+		// release into global object
+		this.moostrapScrollspy = wrap();
 	}
 
-}(this));
+}.call(this));
